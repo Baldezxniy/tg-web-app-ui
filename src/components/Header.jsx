@@ -10,7 +10,7 @@ export const Header = (props) => {
     return (
         <header className="header">
             <Button onClick={onClose}>Закрыть</Button>
-            
+            <br />
             <span className="username">{user?.username}</span>
         </header>
     );
