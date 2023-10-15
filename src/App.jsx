@@ -15,7 +15,7 @@ function App() {
     tg.ready();
   }, []);
 
-  const [isShow, setShow] = useState();
+  const [isShow, setShow] = useState(false);
   const onShowChange = () => {
     setShow(!isShow);
     onTogleButton();
