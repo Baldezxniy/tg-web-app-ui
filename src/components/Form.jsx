@@ -39,7 +39,7 @@ export const Form = () => {
         return () => {
             tg.ofEvent('mainButtonClicked', onSendData)
         }
-    });
+    }, []);
 
     return (
         <div className="form">
