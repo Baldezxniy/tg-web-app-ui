@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import './App.css'
+import { Header } from './components/Header';
 
-const tg = window.Telegram.WebApp;
 
 function App() {
 
@@ -9,20 +9,11 @@ function App() {
     tg.ready();
   }, []);
 
-  
-  const onClose = () => {
-    tg.close();
-  }
-
   return (
     <>
-      hello world
-
-      <button onClick={onClose}>
-        Close App
-      </button>
+      <Header />
     </>
   )
 }
 
-export default App
+export default App;
