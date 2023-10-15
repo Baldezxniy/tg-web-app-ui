@@ -5,7 +5,7 @@ import { useTelegram } from './hooks/useTelegram';
 
 function App() {
 
-  const { tg, user } = useTelegram();
+  const { tg, user, onTogleButton } = useTelegram();
 
   if (!Boolean(user)) {
     return <div className="use_telegram">Используйте телеграмм для входа!</div>
@@ -16,11 +16,15 @@ function App() {
   }, []);
 
   const [isShow, setShow] = useState();
+  const onShowChange = () => {
+    setShow(!isShow);
+    onTogleButton();
+  }
 
   return (
     <>
       <Header />
-      <button onClick={() => setShow(!isShow)}>
+      <button onClick={onShowChange}>
         {isShow ? "Показать" : "Скрыть"}
       </button>
     </>
