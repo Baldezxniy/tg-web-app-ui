@@ -16,6 +16,7 @@ export const useTelegram = () => {
 
     return {
         tg,
+        useTelegram,
         user: tg.initDataUnsafe.user,
         onClose
     };
