@@ -9,6 +9,7 @@ function App() {
     tg.ready();
   }, []);
 
+  
   const onClose = () => {
     tg.close();
   }
