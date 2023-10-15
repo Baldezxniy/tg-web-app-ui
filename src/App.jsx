@@ -6,7 +6,7 @@ const tg = window.Telegram.WebApp;
 
 function App() {
 
-  if (Boolean(tg.initDataUnsafe)) {
+  if (!Boolean(tg.initDataUnsafe.user)) {
     return <div className="use_telegram">Используйте телеграмм для входа!</div>
   }
 
