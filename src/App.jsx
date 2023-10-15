@@ -25,7 +25,7 @@ function App() {
     <>
       <Header />
       <button onClick={onShowChange}>
-        {isShow ? "Показать" : "Скрыть"}
+        {isShow ? "Скрыть" : "Показать"}
       </button>
     </>
   )
