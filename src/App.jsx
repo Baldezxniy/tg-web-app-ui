@@ -1,9 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css'
 import { Header } from './components/Header';
 import { useTelegram } from './hooks/useTelegram';
-
-const tg = window.Telegram.WebApp;
 
 function App() {
 
@@ -17,9 +15,14 @@ function App() {
     tg.ready();
   }, []);
 
+  const [isShow, setShow] = useState();
+
   return (
     <>
       <Header />
+      <button onClick={() => setShow(!isShow)}>
+        {isShow ? "Показать" : "Скрыть"}
+      </button>
     </>
   )
 }
