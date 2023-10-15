@@ -16,7 +16,7 @@ export const useTelegram = () => {
 
     return {
         tg,
-        useTelegram,
+        onTogleButton,
         user: tg.initDataUnsafe.user,
         onClose
     };
