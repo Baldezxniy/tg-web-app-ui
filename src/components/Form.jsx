@@ -33,11 +33,12 @@ export const Form = () => {
 
         tg.sendData(JSON.stringify(data));
     }, [])
+
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
 
         return () => {
-            tg.ofEvent('mainButtonClicked', onSendData)
+            tg.offEvent('mainButtonClicked', onSendData)
         }
     }, []);
 
