@@ -25,20 +25,20 @@ export const ProductList = () => {
 
     const {mainButton }= useTelegram();
 
-    const [addedItem, setAddedItem] = useState([]);
+    const [addedItems, setAddedItems] = useState([]);
     const onAdd = (product)=>{
-        const alreadyAdded = addedItem.filter(item => item.id === product.id);
+        const alreadyAdded = addedItems.find(item => item.id === product.id);
         let newItem =[];
 
-        if(alreadyAdded.length > 0){
-            newItem = addedItem.filter(item => item.id !== product.id);
+        if(alreadyAdded){
+            newItem = addedItems.filter(item => item.id !== product.id);
         }else {
-            newItem = [...addedItem, product];
+            newItem = [...addedItems, product];
         }
 
-        setAddedItem(newItem);
+        setAddedItems(newItem);
 
-        if(addedItem.length === 0){
+        if(addedItems.length === 0){
             mainButton.hide();
         }else{
             mainButton.show();
