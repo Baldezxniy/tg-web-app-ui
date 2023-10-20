@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useState } from "react";
-import { useTelegram } from "../hooks/useTelegram";
+import {useCallback, useEffect, useState} from "react";
+import {useTelegram} from "../../hooks/useTelegram.js";
 import "./Form.scss";
 
 export const Form = () => {
@@ -8,19 +8,19 @@ export const Form = () => {
     const [city, setCity] = useState("");
     const [subject, setSubject] = useState("physical");
 
-    const { tg } = useTelegram();
+    const {tg, mainButton} = useTelegram();
 
     useEffect(() => {
-        tg.MainButton.setParams({
+        mainButton.setParams({
             text: 'Отправить данные'
         })
     }, [])
 
     useEffect(() => {
         if (!country || !city) {
-            tg.MainButton.hide();
+            mainButton.hide();
         } else {
-            tg.MainButton.show();
+            mainButton.show();
         }
     }, [country, city]);
 
@@ -37,7 +37,6 @@ export const Form = () => {
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
-
         return () => {
             tg.offEvent('mainButtonClicked', onSendData)
         }
@@ -50,12 +49,12 @@ export const Form = () => {
                 className="input"
                 placeholder="Страна"
                 value={country}
-                onChange={e => setCountry(e.target.value)} />
+                onChange={e => setCountry(e.target.value)}/>
             <input
                 className="input"
                 placeholder="город"
                 value={city}
-                onChange={e => setCity(e.target.value)} />
+                onChange={e => setCity(e.target.value)}/>
             <select
                 value={subject}
                 className="select"

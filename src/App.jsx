@@ -1,22 +1,23 @@
 import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css'
-import { Form } from './components/Form';
-import { Header } from './components/Header';
-import { ProductList } from './components/ProductList';
+import { Form } from './components/Form/Form.jsx';
+import { Header } from './components/Header/Header.jsx';
+import { ProductList } from './components/ProductList/ProductList.jsx';
 import { useTelegram } from './hooks/useTelegram';
 
 function App() {
 
-  const { tg, user, onTogleButton } = useTelegram();
+  const { tg, user} = useTelegram();
 
-  // if (!Boolean(user)) {
-  //   return <div className="use_telegram">Используйте телеграмм для входа!</div>
-  // }
+  if (!user) {
+    return <div className="use_telegram">Используйте телеграмм для входа!</div>
+  }
 
+    // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     tg?.ready();
-  }, []);
+  }, [tg]);
 
   return (
     <>

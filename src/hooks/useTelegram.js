@@ -14,10 +14,14 @@ export const useTelegram = () => {
         }
     }
 
+    const mainButton = tg.MainButton;
+
     return {
         tg,
         onTogleButton,
+        mainButton,
         user: tg?.initDataUnsafe?.user,
-        onClose
+        onClose,
+        queryId: tg.initDataUnsafe?.query_id
     };
 } 
