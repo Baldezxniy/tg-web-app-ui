@@ -1,5 +1,8 @@
 import "./ProductItem.scss"
 import {Button} from "../Buttom/Button.jsx";
+
+import img from '../../assets/ava.jpg';
+
 // eslint-disable-next-line react/prop-types
 export const ProductItem =({product, className, onAdd})=>{
 
@@ -9,7 +12,7 @@ export const ProductItem =({product, className, onAdd})=>{
 
   return (
     <div className={'product ' + className}>
-      <div className={'img'} />
+      <img className={'img'} src={img} />
       {/* eslint-disable-next-line react/prop-types */}
       <div className={'title'}>{product.title}</div>
       {/* eslint-disable-next-line react/prop-types */}
