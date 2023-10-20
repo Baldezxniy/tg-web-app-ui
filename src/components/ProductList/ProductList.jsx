@@ -15,8 +15,8 @@ const products = [
 ];
 
 const getTotalPrice =(products)=>{
-    return products.reduct((acc, item)=>{
-        acc + item.price;
+    return products.reduce((acc, item)=>{
+        return acc + item.price;
     }, 0)
 };
 
@@ -28,7 +28,7 @@ export const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
     const onAdd = (product)=>{
         const alreadyAdded = addedItems.find(item => item.id === product.id);
-        let newItem =[];
+        let newItem;
 
         if(alreadyAdded){
             newItem = addedItems.filter(item => item.id !== product.id);
