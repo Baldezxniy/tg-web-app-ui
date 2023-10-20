@@ -28,22 +28,22 @@ export const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
     const onAdd = (product)=>{
         const alreadyAdded = addedItems.find(item => item.id === product.id);
-        let newItem;
+        let newItems;
 
         if(alreadyAdded){
-            newItem = addedItems.filter(item => item.id !== product.id);
+            newItems = addedItems.filter(item => item.id !== product.id);
         }else {
-            newItem = [...addedItems, product];
+            newItems = [...addedItems, product];
         }
 
-        setAddedItems(newItem);
+        setAddedItems(newItems);
 
-        if(addedItems.length === 0){
+        if(newItems.length === 0){
             mainButton.hide();
         }else{
             mainButton.show();
             mainButton.setParams({
-                text:'Оформить кредит на ' + getTotalPrice(newItem) + ' грн'
+                text:'Оформить кредит на ' + getTotalPrice(newItems) + ' грн'
             });
         }
     }
