@@ -1,6 +1,6 @@
 import "./ProductList.scss"
 import {ProductItem} from "../ProductItem/ProductItem.jsx";
-import {useCallback, useEffect, useState} from "react";
+import {useState} from "react";
 import {useTelegram} from "../../hooks/useTelegram.js";
 
 const products = [
