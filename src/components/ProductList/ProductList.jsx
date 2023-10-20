@@ -27,7 +27,7 @@ export const ProductList = () => {
 
     const [addedItem, setAddedItem] = useState([]);
     const onAdd = (product)=>{
-        const alreadyAdded = addedItem.find(item => item.id === product.id);
+        const alreadyAdded = addedItem.filter(item => item.id === product.id);
         let newItem =[];
 
         if(alreadyAdded.length > 0){
