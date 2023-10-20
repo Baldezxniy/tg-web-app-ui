@@ -49,7 +49,7 @@ export const ProductList = () => {
     }
 
     return(
-      <div>
+      <div className={'list'}>
           {
               products.map(product=>(
                 <ProductItem

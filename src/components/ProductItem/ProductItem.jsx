@@ -1,4 +1,4 @@
-import "./ProductItemList.scss"
+import "./ProductItem.scss"
 import {Button} from "../Buttom/Button.jsx";
 // eslint-disable-next-line react/prop-types
 export const ProductItem =({product, className, onAdd})=>{
@@ -6,12 +6,14 @@ export const ProductItem =({product, className, onAdd})=>{
   const onAddHandler = ()=>{
     onAdd(product)
   }
-  console.log(product)
+
   return (
     <div className={'product ' + className}>
       <div className={'img'} />
-      <div className={'title'}>product.title</div>
-      <div className={'description'}>product.description</div>
+      {/* eslint-disable-next-line react/prop-types */}
+      <div className={'title'}>{product.title}</div>
+      {/* eslint-disable-next-line react/prop-types */}
+      <div className={'description'}>{product.description}</div>
       <div className={'price'}>
         {/* eslint-disable-next-line react/prop-types */}
         <span> Стоимость: <b>{product.price}</b></span>
