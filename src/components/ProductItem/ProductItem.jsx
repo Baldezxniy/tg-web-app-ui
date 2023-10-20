@@ -7,6 +7,7 @@ export const ProductItem =({product, className, onAdd})=>{
     onAdd(product)
   }
 
+  console.log(product)
   return (
     <div className={'product ' + className}>
       <div className={'img'} />

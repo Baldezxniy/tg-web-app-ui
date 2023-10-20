@@ -38,7 +38,7 @@ export const ProductList = () => {
 
         setAddedItem(newItem);
 
-        if(newItem === 0){
+        if(addedItem.length === 0){
             mainButton.hide();
         }else{
             mainButton.show();
